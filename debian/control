@@ -1,0 +1,81 @@
+Source: haskell-http
+Maintainer: Debian Haskell Group <pkg-haskell-maintainers@lists.alioth.debian.org>
+Uploaders:
+ Arjan Oosting <arjan@debian.org>,
+ Clint Adams <clint@debian.org>,
+ Ilias Tsitsimpis <iliastsi@debian.org>,
+Priority: optional
+Section: haskell
+Rules-Requires-Root: no
+Build-Depends:
+ cdbs,
+ debhelper (>= 10),
+ ghc (>= 8.4.3),
+ ghc-prof,
+ haskell-devscripts (>= 0.13),
+ libghc-network-dev (>= 2.6),
+ libghc-network-dev (<< 3.2),
+ libghc-network-prof,
+ libghc-network-uri-dev (<< 2.7),
+ libghc-network-uri-dev (>= 2.6),
+ libghc-network-uri-prof,
+Build-Depends-Indep:
+ ghc-doc,
+ libghc-network-doc,
+ libghc-network-uri-doc,
+Standards-Version: 4.5.0
+Homepage: https://github.com/haskell/HTTP
+Vcs-Browser: https://salsa.debian.org/haskell-team/DHG_packages/tree/master/p/haskell-http
+Vcs-Git: https://salsa.debian.org/haskell-team/DHG_packages.git [p/haskell-http]
+X-Description: GHC libraries for the Haskell HTTP client library
+ HTTP is a set of Haskell client libraries for HTTP/1.0 and HTTP/1.1.
+
+Package: libghc-http-dev
+Architecture: any
+Depends:
+ ${haskell:Depends},
+ ${misc:Depends},
+ ${shlibs:Depends},
+Suggests:
+ ${haskell:Suggests},
+Provides:
+ ${haskell:Provides},
+Description: ${haskell:ShortDescription}${haskell:ShortBlurb}
+ ${haskell:LongDescription}
+ .
+ ${haskell:Blurb}
+
+Package: libghc-http-prof
+Architecture: any
+Depends:
+ ${haskell:Depends},
+ ${misc:Depends},
+Suggests:
+ ${haskell:Suggests},
+Provides:
+ ${haskell:Provides},
+Description: ${haskell:ShortDescription}${haskell:ShortBlurb}
+ ${haskell:LongDescription}
+ .
+ ${haskell:Blurb}
+
+Package: libghc-http-doc
+Architecture: all
+Section: doc
+Depends:
+ ${haskell:Depends},
+ ${misc:Depends},
+Recommends:
+ ${haskell:Recommends},
+Suggests:
+ ${haskell:Suggests},
+Conflicts:
+ haskell-http-doc (<< 40000006-4),
+Provides:
+ haskell-http-doc,
+Replaces:
+ haskell-http-doc (<< 40000006-4),
+Description: ${haskell:ShortDescription}${haskell:ShortBlurb}
+ ${haskell:LongDescription}
+ .
+ ${haskell:Blurb}
